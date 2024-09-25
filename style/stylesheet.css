@@ -1,18 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap');
 
-:root {
-    background-color: #eb8f8f;
-}
-
 body {
+    background-color: #eb8f8f;
     font-family: 'Playpen Sans', cursive;
     color: white;
 }
 
 h1 {
     font-size: 5em;
+    font-weight: bold;
 }
 
 h3 {
     font-size: 3em;
+    font-weight: bold;
+}
+
+.status {
+    margin: 1em;
+}
+
+.btn {
+    padding-left: 2em;
+    padding-right: 2em;
+    margin-left: 1px;
+    margin-right: 1px;
 }
