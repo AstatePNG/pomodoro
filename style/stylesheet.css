@@ -1,3 +1,4 @@
+/* Add an imported font to the webpage */
 @import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap');
 
 body {
@@ -21,6 +22,7 @@ h1 {
     font-weight: bold;
 }
 
+/* Make a circle around the timer to display it properly */
 .timer-visual {
     background-color: coral;
     border: 10px;
@@ -36,11 +38,13 @@ h1 {
     transition: all 0.5s ease-in-out;
 }
 
+/* Remove the visual effect added by bootstrap on the state buttons */
 .btn-status:hover {
     cursor: unset;
     background-color:initial;
 }
 
+/* Visual effect when play button hoovered (source : https://cssfx.netlify.app , shine) */
 .btn-style {
     z-index: 1;
     position: relative;
@@ -64,6 +68,7 @@ h1 {
     transition: transform 0.45s ease-in-out;
     transform: translate3d(200%, 0, 0) rotate(35deg);
 }
+/* End of the visual effect when play button hoovered */
 
 /* Resize the timer when the size of the screen is below a value to keep a circular shape and keep a readable font */
 @media (max-width:800px){
@@ -77,6 +82,7 @@ h1 {
     }
 }
 
+/* Define new color for the pause class */
 .pause{
     background-color: aquamarine;
 }
