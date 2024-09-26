@@ -24,8 +24,48 @@
             </div>
 
             <div class="m-3 d-flex flex-row justify-content-center">
-                <button type="button" class="btn btn-dark btn-style" id="start">Start <i class="bi bi-caret-right-fill"></i></button>
+                <button type="button" class="mb-2 btn btn-dark btn-style" id="start">Start <i class="bi bi-caret-right-fill"></i></button>
+                <button type="button" class="mb-2 btn btn-dark btn-style" id="open-settings">Set <i class="bi bi-gear"></i></button>
             </div>
+        </div>
+        <div id="change-settings">
+            <form class="row g-2 form-row align-items-center justify-content-center">
+                <p class="col-auto">Work</p>
+                <div class="col-auto">
+                    <label class="sr-only visually-hidden" for="inputMinuteWork">Minutes</label>
+                    <input type="number" min="0" max="119" class="form-control mb-2" id="inputMinuteWork" placeholder="25">
+                </div>
+
+                <div class="col-auto">
+                    <label class="sr-only visually-hidden" for="inputSecondeWork">Secondes</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">:</div>
+                            </div>
+                        <input type="number" min="0" max="59" class="form-control" id="inputSecondeWork" placeholder="00">
+                    </div>
+                </div>
+
+                <p class="col-auto">Pause</p>
+                <div class="col-auto">
+                    <label class="sr-only visually-hidden" for="inputMinutePause">Minutes</label>
+                    <input type="number" min="0" max="119" class="form-control mb-2" id="inputMinutePause" placeholder="5">
+                </div>
+
+                <div class="col-auto">
+                    <label class="sr-only visually-hidden" for="inputSecondePause">Secondes</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">:</div>
+                            </div>
+                        <input type="number" min="0" max="59" class="form-control" id="inputSecondePause" placeholder="00">
+                    </div>
+                </div>
+
+                <div class="col-auto">
+                    <button type="button" class="mb-2 btn btn-dark btn-style" id="set-settings">Set <i class="bi bi-gear"></i></button>
+                </div>
+            </form>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <script src="scripts/script.js"></script>
