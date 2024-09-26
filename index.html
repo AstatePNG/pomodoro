@@ -12,8 +12,7 @@
     </head>
     <body>
         <div class="container">
-            <h1 class="m-2 text-center">Pomodoro</h1>
-            <h3 class="m-1 text-center">Let's start the timer</h3>
+            <h1 class="m-2 text-center">Timer Pomodoro</h1>
 
             <div class="d-flex flex-row justify-content-center mt-3" role="group">
                 <button type="button" class="btn btn-outline-warning btn-status" id="travail">Travail</button>
@@ -25,7 +24,7 @@
             </div>
 
             <div class="m-3 d-flex flex-row justify-content-center">
-                <button type="button" class="btn btn-dark btn-style" id="start">Start <i class="bi bi-caret-right-fill"><i class="bi bi-pause"></i></i></button>
+                <button type="button" class="btn btn-dark btn-style" id="start">Start <i class="bi bi-caret-right-fill"></i></button>
                 <button type="button" class="btn btn-dark btn-style" id="reset">Reset <i class="bi bi-arrow-counterclockwise"></i></button>
             </div>
         </div>
@@ -33,7 +32,7 @@
             <form class="row g-2 form-row align-items-center justify-content-center">
                 <div class="col-auto">
                     <label class="sr-only visually-hidden" for="inlineFormInputMinute">Minutes</label>
-                    <input type="number" min="0" class="form-control mb-2" id="inlineFormInputMinute" placeholder="25">
+                    <input type="number" min="0" max="119" class="form-control mb-2" id="inlineFormInputMinute" placeholder="25">
                 </div>
 
                 <div class="col-auto">
