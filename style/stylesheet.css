@@ -41,7 +41,6 @@ h1 {
 /* Remove the visual effect added by bootstrap on the state buttons */
 .btn-status:hover {
     cursor: unset;
-    background-color:initial;
 }
 
 /* Visual effect when play button hoovered (source : https://cssfx.netlify.app , shine) */
@@ -85,9 +84,14 @@ h1 {
 /* Define new color for the pause class */
 .pause{
     background-color: aquamarine;
+    color: black;
 }
 
 .timer-visual.pause {
     background-color: aqua;
     border-color: blue;
+}
+
+.txt-noir {
+    color: black;
 }

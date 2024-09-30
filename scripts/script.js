@@ -1,9 +1,14 @@
 // definition of the different element of the page
-let timer = document.getElementById("timer");
-let start = document.getElementById("start");
-let reset = document.getElementById("reset");
-let travail = document.getElementById("travail");
-let repos = document.getElementById("repos");
+let timer = document.getElementById("timer"); // the timer
+let start = document.getElementById("start"); // the start button
+let travail = document.getElementById("travail"); // the 'travail' display button
+let repos = document.getElementById("repos"); // the 'repos' display button
+let set = document.getElementById("set-settings"); // the setting menu
+let param = document.getElementById("settings"); // the setting form
+let workMinF = document.getElementById("inputMinuteWork"); // the worked minute of the form
+let workSecF = document.getElementById("inputSecondeWork"); // the worked seconde of the form
+let pauseMinF = document.getElementById("inputMinutePause"); // the paused minute of the form
+let pauseSecF = document.getElementById("inputSecondePause"); // the paused seconde of the form
 
 // initialisation of the global variable used in the different functions
 let minWork = 25;
@@ -97,6 +102,16 @@ function runTimer() {
 
 document.onloadstart = displayTimer(minWork, secWork);
 
+// reset the timer
+function timerReset() {
+    clearInterval(running);
+    displayTimer(minWork, secWork);
+    start.innerHTML = 'Start <i class="bi bi-caret-right-fill"></i>';
+    disablePauseButton();
+    disableWorkButton();
+    timerPlaying = false;
+}
+
 // start the timer the first time clicked, reset the time the second time
 start.onclick = function(){
     if(timerPlaying == false){
@@ -106,11 +121,45 @@ start.onclick = function(){
         runTimer();
     }
     else {
-        clearInterval(running);
-        displayTimer(minWork, secWork);
-        start.innerHTML = 'Start <i class="bi bi-caret-right-fill"></i>';
-        disablePauseButton();
-        disableWorkButton();
-        timerPlaying = false;
+        timerReset();
+    }
+}
+
+// enforce min and max values are respected even with keys input
+// source : https://stackoverflow.com/questions/32936352/html-number-input-min-and-max-not-working-properly
+function enforceMinMax(el) {
+    if (el.value != "") {
+        if (parseInt(el.value) < parseInt(el.min)) {
+            el.value = el.min;
+        }
+        if (parseInt(el.value) > parseInt(el.max)) {
+            el.value = el.max;
+        }
+    }
+}
+
+// verify if the input are valid, display issue message and return false if not, return true otherwise
+function verifyInput() {
+    let inMinW = parseInt(workMinF.value) || 0; // valeur de l'entrée, 0 si nulle
+    let inSecW = parseInt(workSecF.value) || 0;
+    let inMinP = parseInt(pauseMinF.value) || 0;
+    let inSecP = parseInt(pauseSecF.value) || 0;
+    if((inMinW == 0 && inSecW == 0) || (inMinP == 0 && inSecP == 0)){
+        window.alert("Les durées de travail et de repos doivent être d'au moins 1 seconde");
+        return false;
+    }
+    return true;
+}
+
+
+// read form on click. change timer if valid form, display the issues if not
+set.onclick = function(){
+    if(verifyInput() == true){
+        minWork = parseInt(workMinF.value) || 0;
+        secWork = parseInt(workSecF.value) || 0;
+        minPause = parseInt(pauseMinF.value) || 0;
+        secPause = parseInt(pauseSecF.value) || 0;
+        timerReset();
+        param.reset();
     }
 }
