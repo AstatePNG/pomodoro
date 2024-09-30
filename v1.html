@@ -15,8 +15,16 @@
             <h1 class="m-2 text-center">Timer Pomodoro</h1>
 
             <div class="d-flex flex-row justify-content-center mt-3" role="group">
-                <a href="v1.html" ><button type="button" class="btn btn-dark btn-style">Voir la V1</button></a>
-                <a href="v2.html" ><button type="button" class="btn btn-dark btn-style">Voir la V2</button></a>
+                <button type="button" class="btn btn-outline-warning btn-status" id="travail">Travail</button>
+                <button type="button" class="btn btn-outline-info btn-status" id="repos">Repos</button>
+            </div>
+            
+            <div class="d-flex flex-row justify-content-center">
+                <p class="m-5 p-5 rounded-circle text-center timer-visual  align-self-center" id="timer">00:00</p>
+            </div>
+
+            <div class="m-3 d-flex flex-row justify-content-center">
+                <button type="button" class="btn btn-dark btn-style" id="start">Start <i class="bi bi-caret-right-fill"></i></button>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
