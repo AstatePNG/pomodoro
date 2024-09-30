@@ -82,10 +82,15 @@ h1 {
 
 /* Define new color for the pause class */
 .pause{
-    background-color: aquamarine;
+    background-color: #99E1D9;
+    color: black;
 }
 
 .timer-visual.pause {
-    background-color: aqua;
-    border-color: blue;
+    background-color: #087E8B;
+    border-color: #0B3954;
+}
+
+.txt-noir {
+    color: black;
 }
